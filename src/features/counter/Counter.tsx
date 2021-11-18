@@ -1,10 +1,11 @@
 import React from 'react';
 import {Button, Text, View} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
+import {useAppSelector} from '../../hooks';
 import {decrement, increment, selectCount} from './counterSlice';
 
 export default function Counter() {
-  const count = useSelector(selectCount);
+  const count = useAppSelector(state => state.counter.value);
   const dispatch = useDispatch();
 
   return (
