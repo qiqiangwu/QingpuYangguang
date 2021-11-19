@@ -14,6 +14,8 @@
 		6172F2D35A4C3AA820D92908 /* libPods-QingpuYangguang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-QingpuYangguang.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-QingpuYangguang-QingpuYangguangTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-QingpuYangguang-QingpuYangguangTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D1D197EC8D4342A88795ABA6 /* PingFang-SC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A6715C8454A40CE80F5479F /* PingFang-SC-Bold.ttf */; };
+		89C6EF2B268647EFA92794C2 /* PingFang-SC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00F98A116BBA4FCFB5F5D60E /* PingFang-SC-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		C0A881CF5CF3F2B244570E2A /* Pods-QingpuYangguang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingpuYangguang.debug.xcconfig"; path = "Target Support Files/Pods-QingpuYangguang/Pods-QingpuYangguang.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-QingpuYangguang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingpuYangguang.release.xcconfig"; path = "Target Support Files/Pods-QingpuYangguang/Pods-QingpuYangguang.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		7A6715C8454A40CE80F5479F /* PingFang-SC-Bold.ttf */ = {isa = PBXFileReference; name = "PingFang-SC-Bold.ttf"; path = "../src/assets/fonts/PingFang-SC-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		00F98A116BBA4FCFB5F5D60E /* PingFang-SC-Regular.otf */ = {isa = PBXFileReference; name = "PingFang-SC-Regular.otf"; path = "../src/assets/fonts/PingFang-SC-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E233CBF5F47BEE60B243DCF8 /* Pods */,
+				1BC962BE0493431CB3064BF4 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -148,6 +153,16 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		1BC962BE0493431CB3064BF4 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				7A6715C8454A40CE80F5479F /* PingFang-SC-Bold.ttf */,
+				00F98A116BBA4FCFB5F5D60E /* PingFang-SC-Regular.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +260,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D1D197EC8D4342A88795ABA6 /* PingFang-SC-Bold.ttf in Resources */,
+				89C6EF2B268647EFA92794C2 /* PingFang-SC-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

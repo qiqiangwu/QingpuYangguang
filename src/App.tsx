@@ -1,50 +1,81 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Button, Text, View} from 'react-native';
-import {Provider} from 'react-redux';
+import Home from './screens/home/Home';
+import List from './screens/list/ListScreen';
+import {useEffect} from 'react';
+import {useAppDispatch} from './hooks';
+import {connect, Provider} from 'react-redux';
 import store from './store';
-import Counter from './features/counter/Counter';
+import {Dimensions, ScaledSize} from 'react-native';
+import Logger from './utils/logger';
+import {updateWindowSize} from './redux/appSlice';
+import {COLORS} from './constants';
 
-function HomeScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Counter')}></Button>
-    </View>
-  );
-}
-
-function DetailsScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go to Details... again"
-        onPress={() => navigation.push('Details')}
-      />
-    </View>
-  );
-}
+const logger = Logger.get('App');
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+const Main = connect()(() => {
+  const dispatch = useAppDispatch();
+
+  const onChange = ({
+    window,
+    screen,
+  }: {
+    window: ScaledSize;
+    screen: ScaledSize;
+  }) => {
+    logger.debug('window:', window);
+    logger.debug('screen:', screen);
+
+    dispatch(
+      updateWindowSize({
+        width: window.width,
+        height: window.height,
+      }),
+    );
+  };
+
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener('change', onChange);
+    return () => {
+      subscription.remove();
+    };
+  }, []);
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Group
+          screenOptions={{
+            title: '',
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: COLORS.primary,
+            },
+            headerTintColor: COLORS.white,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}>
           <Stack.Screen
             name="Home"
-            component={HomeScreen}
-            options={{title: 'Overview'}}
+            component={Home}
+            options={{header: () => null}}
           />
-          <Stack.Screen name="Details" component={DetailsScreen} />
-          <Stack.Screen name="Counter" component={Counter} />
-        </Stack.Navigator>
-      </NavigationContainer>
+          <Stack.Screen name="List" component={List} />
+        </Stack.Group>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+});
+
+const App = () => {
+  return (
+    <Provider store={store}>
+      <Main></Main>
     </Provider>
   );
-}
+};
+
+export default App;
