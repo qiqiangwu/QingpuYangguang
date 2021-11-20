@@ -32,7 +32,7 @@ const Home = ({topAds, fetchHomeData, nav}: Props) => {
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['right', 'bottom', 'left']}>
       <StatusBar
         barStyle="light-content"
         translucent={true}
@@ -40,7 +40,7 @@ const Home = ({topAds, fetchHomeData, nav}: Props) => {
       />
 
       <HomeList ListHeaderComponent={ListHeaderComponent} />
-    </View>
+    </SafeAreaView>
   );
 };
 

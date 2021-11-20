@@ -11,6 +11,7 @@ import {Dimensions, ScaledSize} from 'react-native';
 import Logger from './utils/logger';
 import {updateWindowSize} from './redux/appSlice';
 import {COLORS} from './constants';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const logger = Logger.get('App');
 
@@ -44,29 +45,31 @@ const Main = connect()(() => {
     };
   }, []);
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Group
-          screenOptions={{
-            title: '',
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: COLORS.primary,
-            },
-            headerTintColor: COLORS.white,
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}>
-          <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{header: () => null}}
-          />
-          <Stack.Screen name="List" component={List} />
-        </Stack.Group>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Group
+            screenOptions={{
+              title: '',
+              headerBackTitleVisible: false,
+              headerStyle: {
+                backgroundColor: COLORS.primary,
+              },
+              headerTintColor: COLORS.white,
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}>
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{header: () => null}}
+            />
+            <Stack.Screen name="List" component={List} />
+          </Stack.Group>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 });
 

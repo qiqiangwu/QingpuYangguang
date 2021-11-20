@@ -13,7 +13,8 @@ import {
 } from './listSlice';
 import Logger from '../../utils/logger';
 import {RouteProp, useRoute} from '@react-navigation/native';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const logger = Logger.get('/list/listScreen');
 
@@ -96,7 +97,7 @@ const ListScreen = ({
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['right', 'bottom', 'left']}>
       <List
         data={list}
         refreshing={refreshing}
