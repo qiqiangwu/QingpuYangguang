@@ -12,6 +12,9 @@ import {connect, ConnectedProps} from 'react-redux';
 import {COLORS, FONTS, SIZES} from '../constants';
 import {selectWindowHeight, selectWindowWidth} from '../redux/appSlice';
 import {RootState} from '../store';
+import Logger from '../utils/logger';
+
+const logger = Logger.get('components/List');
 
 export interface ListItem {
   id: number;
@@ -110,6 +113,7 @@ const List = ({
   };
 
   const ListHeaderComponent = () => {
+    logger.debug('ListHeaderComponent execute');
     return <View>{HeaderComponent}</View>;
   };
 
