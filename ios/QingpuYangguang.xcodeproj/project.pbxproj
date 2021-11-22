@@ -14,6 +14,8 @@
 		6172F2D35A4C3AA820D92908 /* libPods-QingpuYangguang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-QingpuYangguang.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-QingpuYangguang-QingpuYangguangTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-QingpuYangguang-QingpuYangguangTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		89C6EF2B268647EFA92794C2 /* PingFang-SC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 00F98A116BBA4FCFB5F5D60E /* PingFang-SC-Regular.otf */; };
+		D1D197EC8D4342A88795ABA6 /* PingFang-SC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A6715C8454A40CE80F5479F /* PingFang-SC-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,7 @@
 		00E356EE1AD99517003FC87E /* QingpuYangguangTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QingpuYangguangTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* QingpuYangguangTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QingpuYangguangTests.m; sourceTree = "<group>"; };
+		00F98A116BBA4FCFB5F5D60E /* PingFang-SC-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PingFang-SC-Regular.otf"; path = "../src/assets/fonts/PingFang-SC-Regular.otf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* QingpuYangguang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QingpuYangguang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = QingpuYangguang/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = QingpuYangguang/AppDelegate.m; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 		1D0AE47A65C8663E3B452821 /* Pods-QingpuYangguang-QingpuYangguangTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingpuYangguang-QingpuYangguangTests.release.xcconfig"; path = "Target Support Files/Pods-QingpuYangguang-QingpuYangguangTests/Pods-QingpuYangguang-QingpuYangguangTests.release.xcconfig"; sourceTree = "<group>"; };
 		6423831EA8574132BED9D8CC /* libPods-QingpuYangguang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QingpuYangguang.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-QingpuYangguang-QingpuYangguangTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingpuYangguang-QingpuYangguangTests.debug.xcconfig"; path = "Target Support Files/Pods-QingpuYangguang-QingpuYangguangTests/Pods-QingpuYangguang-QingpuYangguangTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A6715C8454A40CE80F5479F /* PingFang-SC-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PingFang-SC-Bold.ttf"; path = "../src/assets/fonts/PingFang-SC-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = QingpuYangguang/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABFE59519B596E51CEFDCCC0 /* libPods-QingpuYangguang-QingpuYangguangTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QingpuYangguang-QingpuYangguangTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A881CF5CF3F2B244570E2A /* Pods-QingpuYangguang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingpuYangguang.debug.xcconfig"; path = "Target Support Files/Pods-QingpuYangguang/Pods-QingpuYangguang.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +100,16 @@
 			name = QingpuYangguang;
 			sourceTree = "<group>";
 		};
+		1BC962BE0493431CB3064BF4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A6715C8454A40CE80F5479F /* PingFang-SC-Bold.ttf */,
+				00F98A116BBA4FCFB5F5D60E /* PingFang-SC-Regular.otf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E233CBF5F47BEE60B243DCF8 /* Pods */,
+				1BC962BE0493431CB3064BF4 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -245,6 +260,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D1D197EC8D4342A88795ABA6 /* PingFang-SC-Bold.ttf in Resources */,
+				89C6EF2B268647EFA92794C2 /* PingFang-SC-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
