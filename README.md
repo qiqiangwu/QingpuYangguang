@@ -45,3 +45,24 @@ open "rndebugger://set-debugger-loc?host=localhost&port=8081"
 第二步:
 
 打开 React Native Debug Menu，选择 Debug in chrome
+
+## 验证
+
+- 不同分辨率、长宽比手机的 UI 支持如何实现
+  React Native 采用逻辑分辨率
+  手机端 UI 一般还原设计稿
+
+  https://segmentfault.com/a/1190000039805723
+
+- UI 的驱动模式如何设计？事件驱动还是？
+  事件驱动
+
+- iOS 和 android 的 API 差异性如何兼容？
+  https://reactnative.dev/docs/platform-specific-code
+  官方提供两种方式
+
+- 更新机制
+  应用更新安卓采用 apk 更新
+
+- 全局状态管理
+  react-redux 管理
