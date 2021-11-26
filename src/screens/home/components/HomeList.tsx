@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {connect, ConnectedProps} from 'react-redux';
 import {PromiseExecutor} from '../../../common/types';
 import List, {ListItem} from '../../../components/List';
@@ -13,6 +13,10 @@ import {
   selectTotalPage,
 } from '../homeSlice';
 import Logger from '../../../utils/logger';
+import {Animated, Platform, StyleSheet, Text, View} from 'react-native';
+import appConfig from '../../../appConfig';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {COLORS} from '../../../constants';
 
 const logger = Logger.get('/home/HomeList');
 
@@ -28,6 +32,11 @@ const HomeList = ({
   loading = {},
   totalPage = 0,
 }: HomeListProps) => {
+  const scrollYAnim = useRef(new Animated.Value(0)).current;
+  const insets = useSafeAreaInsets();
+
+  logger.info(`${Platform.OS} insets: `, insets);
+
   const [refreshing, setRefreshing] = useState(false);
   const [pageIndex, setPageIndex] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -85,15 +94,33 @@ const HomeList = ({
   };
 
   return (
-    <List
-      data={list}
-      HeaderComponent={ListHeaderComponent}
-      refreshing={refreshing}
-      onRefresh={onRefresh}
-      onLoadMore={onLoadMore}
-      loading={loading[LOADING_FETCH_HOME_ARTICLE_LIST]}
-      hasMore={hasMore}
-    />
+    <View style={{flex: 1}}>
+      <Animated.View
+        style={[
+          styles.header,
+          {
+            paddingTop: insets.top,
+            height: 50 + insets.top,
+            opacity: scrollYAnim.interpolate({
+              inputRange: [0, 300],
+              outputRange: [0, 1],
+            }),
+            backgroundColor: COLORS.primary,
+          },
+        ]}>
+        <Text style={styles.headerTitle}>{appConfig.appName}</Text>
+      </Animated.View>
+      <List
+        scrollY={scrollYAnim}
+        data={list}
+        HeaderComponent={ListHeaderComponent}
+        refreshing={refreshing}
+        onRefresh={onRefresh}
+        onLoadMore={onLoadMore}
+        loading={loading[LOADING_FETCH_HOME_ARTICLE_LIST]}
+        hasMore={hasMore}
+      />
+    </View>
   );
 };
 
@@ -124,3 +151,19 @@ const connector = connect(mapState, mapDispatch);
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 export default connector(HomeList);
+
+const styles = StyleSheet.create({
+  header: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  headerTitle: {
+    color: 'white',
+    fontSize: 18,
+  },
+});
