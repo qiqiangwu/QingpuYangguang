@@ -47,6 +47,14 @@ open "rndebugger://set-debugger-loc?host=localhost&port=8081"
 打开 React Native Debug Menu，选择 Debug in chrome
 
 ## 验证
+- 视频或者监控组件播放组件
+
+![竖屏](./doc/assets/readme/Screenshot_2021-12-02-17-50-55-07_ed172082f452f26.jpg)
+
+![横屏](./doc/assets/readme/Screenshot_2021-12-02-17-51-10-12_ed172082f452f26.jpg)
+
+- Android和IOS更新组件
+
 
 - 不同分辨率、长宽比手机的 UI 支持如何实现
   React Native 采用逻辑分辨率
@@ -66,3 +74,10 @@ open "rndebugger://set-debugger-loc?host=localhost&port=8081"
 
 - 全局状态管理
   react-redux 管理
+
+
+## 原生设计
+![首页](./doc/assets/old-design/IMG20211202180116.jpg)
+![列表](./doc/assets/old-design/IMG20211202180125.jpg)
+![登录](./doc/assets/old-design/IMG20211202180140.jpg)
+![视频列表](./doc/assets/old-design/IMG20211202180206.jpg)
