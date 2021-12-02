@@ -76,7 +76,7 @@ open "rndebugger://set-debugger-loc?host=localhost&port=8081"
   react-redux 管理
 
 
-## 原生设计
+## 原始设计
 ![首页](./doc/assets/old-design/IMG20211202180116.jpg)
 ![列表](./doc/assets/old-design/IMG20211202180125.jpg)
 ![登录](./doc/assets/old-design/IMG20211202180140.jpg)
